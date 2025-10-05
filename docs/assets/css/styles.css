@@ -1,0 +1,66 @@
+/* Base styles */
+:root {
+  --primary: #0d6efd;
+  --dark: #0b132b;
+  --light: #f8f9fa;
+  --muted: #6c757d;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+  color: #212529;
+  background: #ffffff;
+}
+
+.navbar-brand img {
+  height: 40px;
+}
+
+.hero {
+  background: radial-gradient(1200px 600px at 10% 20%, rgba(13, 110, 253, 0.12), transparent),
+              radial-gradient(1000px 500px at 90% 10%, rgba(32, 201, 151, 0.1), transparent);
+  padding: 120px 0 80px;
+}
+.hero .display-4 {
+  font-weight: 800;
+}
+.hero .lead {
+  color: var(--muted);
+}
+
+.section-title {
+  font-weight: 700;
+}
+
+.card-hover {
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+.card-hover:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 24px rgba(0,0,0,0.08);
+}
+
+footer {
+  background: var(--dark);
+  color: #cbd5e1;
+}
+footer a { color: #e2e8f0; }
+footer a:hover { color: #fff; }
+
+.badge-cloud { background: linear-gradient(90deg, #4facfe, #00f2fe); }
+.badge-data { background: linear-gradient(90deg, #f7971e, #ffd200); }
+.badge-security { background: linear-gradient(90deg, #8a2387, #e94057, #f27121); }
+
+/* Course page */
+.course-hero {
+  background: linear-gradient(180deg, rgba(13,110,253,.08), transparent);
+  padding: 60px 0 20px;
+}
+
+/* Utilities */
+.shadow-soft { box-shadow: 0 8px 20px rgba(0,0,0,0.06); }
+.rounded-4 { border-radius: 1rem; }

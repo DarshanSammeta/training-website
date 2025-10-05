@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Payments - TechEdge</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet"/>
+  <link href="assets/css/styles.css" rel="stylesheet">
+</head>
+<body>
+  <div id="navbar-root"></div>
+
+  <section class="py-5">
+    <div class="container">
+      <h1 class="mb-3">Payments</h1>
+      <p class="text-muted">Choose a plan and complete enrollment. Demo-only; replace with your gateway.</p>
+
+      <div class="row g-4 mt-1">
+        <div class="col-12 col-lg-4" data-aos="fade-up">
+          <div class="border rounded-4 p-4 h-100">
+            <h4>Single Course</h4>
+            <p class="display-6 fw-bold">$299</p>
+            <ul>
+              <li>1 course access</li>
+              <li>Recordings & materials</li>
+              <li>Certificate</li>
+            </ul>
+            <button class="btn btn-primary w-100" onclick="fakePay('Single Course',299)">Pay</button>
+          </div>
+        </div>
+        <div class="col-12 col-lg-4" data-aos="fade-up" data-aos-delay="50">
+          <div class="border rounded-4 p-4 h-100">
+            <h4>Professional</h4>
+            <p class="display-6 fw-bold">$699</p>
+            <ul>
+              <li>3 courses</li>
+              <li>Mentorship</li>
+              <li>Career support</li>
+            </ul>
+            <button class="btn btn-primary w-100" onclick="fakePay('Professional',699)">Pay</button>
+          </div>
+        </div>
+        <div class="col-12 col-lg-4" data-aos="fade-up" data-aos-delay="100">
+          <div class="border rounded-4 p-4 h-100">
+            <h4>Corporate</h4>
+            <p class="display-6 fw-bold">Contact</p>
+            <ul>
+              <li>Team training</li>
+              <li>Custom labs</li>
+              <li>Dedicated support</li>
+            </ul>
+            <a class="btn btn-outline-secondary w-100" href="about/contact.html">Request quote</a>
+          </div>
+        </div>
+      </div>
+
+      <hr class="my-5">
+      <h3>Checkout</h3>
+      <form class="row g-3" onsubmit="event.preventDefault(); fakeComplete();">
+        <div class="col-md-6">
+          <label class="form-label">Full name</label>
+          <input class="form-control" required>
+        </div>
+        <div class="col-md-6">
+          <label class="form-label">Email</label>
+          <input type="email" class="form-control" required>
+        </div>
+        <div class="col-md-6">
+          <label class="form-label">Card number</label>
+          <input class="form-control" placeholder="4242 4242 4242 4242" required>
+        </div>
+        <div class="col-md-3">
+          <label class="form-label">Expiry</label>
+          <input class="form-control" placeholder="MM/YY" required>
+        </div>
+        <div class="col-md-3">
+          <label class="form-label">CVC</label>
+          <input class="form-control" placeholder="123" required>
+        </div>
+        <div class="col-12">
+          <button class="btn btn-success" type="submit">Complete Payment</button>
+        </div>
+      </form>
+
+      <div id="pay-msg" class="alert alert-info mt-4 d-none"></div>
+    </div>
+  </section>
+
+  <div id="footer-root"></div>
+
+  <script>
+    function fakePay(plan, amount) {
+      const el = document.getElementById('pay-msg');
+      el.classList.remove('d-none');
+      el.textContent = `Selected ${plan} - $${amount}. Fill checkout to simulate.`;
+      window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
+    }
+    function fakeComplete() {
+      const el = document.getElementById('pay-msg');
+      el.classList.remove('d-none');
+      el.classList.remove('alert-info');
+      el.classList.add('alert-success');
+      el.textContent = 'Payment successful (demo). Check your email for details.';
+    }
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
